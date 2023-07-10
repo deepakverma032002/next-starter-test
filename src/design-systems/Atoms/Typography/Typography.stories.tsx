@@ -1,8 +1,8 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react'
+import { Meta, StoryObj } from '@storybook/react'
 
 import { Typography } from '.'
 
-export default ({
+const meta: Meta<typeof Typography> = {
   title: 'Atoms/Typography',
   component: Typography,
   argTypes: {
@@ -20,85 +20,111 @@ export default ({
       },
     },
   },
-})as ComponentMeta<typeof Typography>;
-
-const Template: ComponentStory<typeof Typography> = props => <Typography {...props}>New Theme</Typography>
-
-export const H1 = Template.bind({})
-H1.args = {
-  variant: 'condensed',
-  size: 'h1',
 }
 
-export const H2 = Template.bind({})
-H2.args = {
-  variant: 'condensed',
-  size: 'h2',
+export default meta
+type Story = StoryObj<typeof Typography>
+
+export const H1: Story = {
+  args: {
+    variant: 'condensed',
+    size: 'h1',
+    children: 'Test h1',
+  },
 }
 
-export const H3 = Template.bind({})
-H3.args = {
-  variant: 'condensed',
-  size: 'h3',
+export const H2: Story = {
+  args: {
+    variant: 'condensed',
+    size: 'h2',
+    children: 'Test h2',
+  },
 }
 
-export const H4 = Template.bind({})
-H4.args = {
-  variant: 'condensed',
-  size: 'h4',
+export const H3: Story = {
+  args: {
+    variant: 'condensed',
+    size: 'h3',
+    children: 'Test h3',
+  },
 }
 
-export const Subtitle = Template.bind({})
-Subtitle.args = {
-  variant: 'condensed',
-  size: 'subtitle',
+export const H4: Story = {
+  args: {
+    variant: 'condensed',
+    size: 'h4',
+    children: 'Test h4',
+  },
 }
 
-export const Paragraph = Template.bind({})
-Paragraph.args = {
-  variant: 'condensed',
-  size: 'paragraph',
+export const Subtitle: Story = {
+  args: {
+    variant: 'condensed',
+    size: 'subtitle',
+    children: 'Test subtitle',
+  },
 }
 
-export const Body = Template.bind({})
-Body.args = {
-  variant: 'condensed',
-  size: 'body',
+export const Paragraph: Story = {
+  args: {
+    variant: 'condensed',
+    size: 'paragraph',
+    children: 'Test paragraph',
+  },
 }
 
-export const Caption = Template.bind({})
-Caption.args = {
-  variant: 'condensed',
-  size: 'caption',
+export const Body: Story = {
+  args: {
+    variant: 'condensed',
+    size: 'body',
+    children: 'Test body',
+  },
 }
 
-export const Small = Template.bind({})
-Small.args = {
-  variant: 'condensed',
-  size: 'small',
+export const Caption: Story = {
+  args: {
+    variant: 'condensed',
+    size: 'caption',
+    children: 'Test body',
+  },
 }
 
-export const RegularSmall = Template.bind({})
-RegularSmall.args = {
-  variant: 'regular',
-  size: 'sm',
+export const Small: Story = {
+  args: {
+    variant: 'condensed',
+    size: 'small',
+    children: 'Test body',
+  },
 }
 
-export const RegularMedium = Template.bind({})
-RegularMedium.args = {
-  variant: 'regular',
-  size: 'md',
+export const RegularSmall: Story = {
+  args: {
+    variant: 'regular',
+    size: 'sm',
+    children: 'Test body',
+  },
 }
 
-export const RegularLarge = Template.bind({})
-RegularLarge.args = {
-  variant: 'regular',
-  size: 'lg',
+export const RegularMedium: Story = {
+  args: {
+    variant: 'regular',
+    size: 'md',
+    children: 'Test body',
+  },
 }
 
-export const ResponsiveText = Template.bind({})
-ResponsiveText.args = {
-  variant: undefined,
-  size: undefined,
-  className: 'lg:typography-h1 md:typography-paragraph typography-sm',
+export const RegularLarge: Story = {
+  args: {
+    variant: 'regular',
+    size: 'lg',
+    children: 'Test body',
+  },
+}
+
+export const ResponsiveText: Story = {
+  args: {
+    variant: undefined,
+    size: undefined,
+    className: 'lg:typography-h1 md:typography-paragraph typography-sm',
+  },
 }

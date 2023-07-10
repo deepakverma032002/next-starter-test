@@ -1,38 +1,24 @@
-import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { Button } from "./Button";
+import { Meta, StoryObj } from '@storybook/react'
 
-export default {
-  title: "Atoms/Button",
+import { Button } from '.'
+
+const meta: Meta<typeof Button> = {
+  title: 'Atoms/Button',
   component: Button,
   argTypes: {
-    backgroundColor: { control: "color" },
-    loading: {
-      control: "boolean",
-      defaultValue: false,
-    },
-    size: {
-      control: "select",
-      options: ["small", "medium", "large"],
-      defaultValue: "medium",
-    },
-    color: {
-      control: "select",
-      options: ["neon", "primary"],
-      defaultValue: "neon",
-    },
     className: {
       table: {
         disabled: true,
       },
     },
   },
-} as ComponentMeta<typeof Button>;
+}
 
-const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
+export default meta
+type Story = StoryObj<typeof Button>
 
-export const Primary = Template.bind({});
-Primary.args = {
-  primary: true,
-  label: "Button",
-};
+export const NeonSolidButton: Story = {
+  args: {
+    className: 'visible',
+  },
+}
