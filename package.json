@@ -66,5 +66,9 @@
       "plugin:storybook/recommended",
       "plugin:storybook/recommended"
     ]
+  },
+  "engines": {
+    "node": ">=18.17.1",
+    "yarn": "^1.22.22"
   }
 }
