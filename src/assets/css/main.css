@@ -55,7 +55,7 @@
   }
 
   .typography-body {
-    @apply font-RobotoCondensed text-body font-normal leading-body tracking-body;
+    @apply font-RobotoCondensed font-normal leading-body tracking-body text-body;
   }
 
   .typography-caption {
