@@ -6,6 +6,7 @@ import { PropsWithChildren } from 'react'
 import { ThemeProvider } from 'next-themes'
 import { ToastContainer } from 'react-toastify'
 import Head from 'next/head'
+import { GoogleOAuthProvider } from '@react-oauth/google'
 
 import Header from 'design-systems/Organisms/Header'
 import Footer from 'design-systems/Organisms/Footer'
@@ -34,11 +35,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <ThemeProvider attribute="class">
           <NoFirstRender>
-            <div className="m-0 min-h-screen overflow-x-hidden p-0 text-center">
-              <Header />
-              <div className="min-h-[calc(100vh-230px)] w-screen md:min-h-[calc(100vh-159px)] md:pt-16">{children}</div>
-              <Footer />
-            </div>
+            <GoogleOAuthProvider clientId={process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID || ''}>
+              <div className="m-0 min-h-screen overflow-x-hidden p-0 text-center">
+                <Header />
+                <div className="min-h-[calc(100vh-230px)] w-screen md:min-h-[calc(100vh-159px)] md:pt-16">
+                  {children}
+                </div>
+                <Footer />
+              </div>
+            </GoogleOAuthProvider>
             <ToastContainer />
           </NoFirstRender>
         </ThemeProvider>
