@@ -9,7 +9,7 @@ const HomePageTemplate: React.FC = () => {
   return (
     <Layout>
       <main>
-        <GoogleOAuthProvider clientId={'1080803887954-f5h0j9bmungd1qmt6eoc08odbi4ojb10.apps.googleusercontent.com'}>
+        <GoogleOAuthProvider clientId={process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID || ''}>
           <GoogleLogin
             useOneTap
             onError={() => {
